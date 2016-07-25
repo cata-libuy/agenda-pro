@@ -2,13 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>AgendaPro Front-end Task</title>
+    <title>AgendaPro Front-End Task</title>
+    <link rel="stylesheet" type="text/css" href="css/front.css" />
+    <meta name="viewport" content="width=device-width" />
   </head>
   <body class="shapes-gallery">
-    <p id="test">
-      Hola
-    </p>
-    <img id="1" src="" />
+    <h1>Just some nice images</h1>
+    <p>Bla, bla, bla</p>
+    <div class="main-container">
+      <div class="img-container-outer">
+        <div class="img-container-inner circle-container" onclick="showImage(1)">
+            <img id="1" src="" alt="Some nice new zealand landscape"/>
+        </div>
+      </div>
+      <div class="img-container-outer">
+        <div class="img-container-inner rectangle-container" onclick="showImage(2)">
+            <img id="2" src="" alt="Some nice new zealand landscape"/>
+        </div>
+      </div>
+      <div class="img-container-outer">
+        <div class="img-container-inner square-container" onclick="showImage(3)">
+            <img id="3" src="" alt="Some nice new zealand landscape"/>
+        </div>
+      </div>
+      <div class="img-container-outer">
+        <div class="triangle-bottom-shadow"></div>
+        <div class="img-container-inner triangle-container" onclick="showImage(4)">
+            <img id="4" src="" alt="Some nice new zealand landscape"/>
+            <div class="triangle-cover cover-left"></div>
+            <div class="triangle-cover cover-right"></div>
+        </div>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+    <!-- Modal -->
+    <div id="modal">
+      <div class="close" onclick="handleModalClose()"><img src="img/ic_clear_white_36px.svg" /></div>
+      <h2>New Zealand</h2>
+      <div class="img-container">
+          <img id="selected" src="" alt="Some nice new zealand landscape"/>
+      </div>
+    </div>
   </body>
   <script
     src="https://code.jquery.com/jquery-2.2.4.min.js"

@@ -1,12 +1,16 @@
 var state = {
     current_resolution: '',
-    images: [{id:1, src: 'new-zealand-583176_1920'}]
+    images: [
+      {id:1, src: 'new-zealand-679068'},
+      {id:2, src: 'new-zealand-583176_1920'},
+      {id:3, src: 'new-zealand-583181_1920'},
+      {id:4, src: 'sun-rise-661541_1920'}
+    ]
 }
 
 sayHello = function() {
   // Prueba que el js se carga ok
-  console.log('Gallery app started ok');
-}
+  console.log('Gallery app started ok');}
 
 setCurrentResolution = function() {
   // Determina el rango de tamaño del dispositivo
@@ -31,10 +35,14 @@ updateImagesSources = function() {
   }
 }
 
-handleImageClick = function(imageId) {
+showImage = function(imageId) {
   // Recibe un imageId y despliega modal con imagen a tamaño completo
+  console.log('showImage ' + imageId);
+  $('#selected').attr('src', 'img/' + state.images[imageId - 1].src + '-' + state.current_resolution + '.jpg' )
+  $('#modal').toggle();
 }
 
 handleModalClose = function() {
-  // Oculta modal
+  $('#modal').toggle();
+  $('#selected').attr('src', '' );
 }
