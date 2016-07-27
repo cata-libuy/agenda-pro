@@ -17,7 +17,7 @@ setCurrentResolution = function() {
   var deviceWidth = $(window).width();
   if (deviceWidth < 450) {
     state.current_resolution = 'small';
-  } else if (deviceWidth >= 450 && deviceWidth < 800) {
+  } else if (deviceWidth >= 450 && deviceWidth < 1450) {
     state.current_resolution = 'medium';
   } else {
     state.current_resolution = 'large';
@@ -45,4 +45,10 @@ showImage = function(imageId) {
 handleModalClose = function() {
   $('#modal').toggle();
   $('#selected').attr('src', '' );
+}
+
+handleBackButton = function () {
+  if ($('#selected').attr('src') !== '') {
+    handleModalClose();
+  }
 }

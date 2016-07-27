@@ -37,6 +37,9 @@ p { margin: 5% 15% 2%;}
 .img-container-inner:hover, .triangle-cover:hover {
   border-color: yellow;
 }
+.img-container-inner:focus, .triangle-cover:focus {
+  border-color: red;
+}
 
 .circle-container {
   border-radius: 50%;
@@ -116,21 +119,21 @@ img {
     width: 32vw;
   }
   .triangle-container {
-    height: 27.7vw; /* lado x 0.866 */
+    height: 27.65vw; /* lado x 0.866 */
     width: 32vw;
     margin-top: 2.5vw;
   }
   .triangle-cover {
-    width: 35vw;
-    height: 35vw;
+    width: 32vw;
+    height: 32vw;
   }
   .triangle-cover.cover-left {
-    left: -24vw;
-    bottom: 6.3vw;
+    left: -21.9vw;
+    bottom: 5.8vw;
   }
   .triangle-cover.cover-right {
-    right: -24vw;
-    bottom: 6.3vw;
+    right: -22vw;
+    bottom: 5.8vw;
   }
 }
 
@@ -212,8 +215,8 @@ img {
 }
 
 #modal .img-container {
-  width: 80%;
-  margin: 5% auto;
+  width: 90%;
+  margin: 2.5% auto;
   height: auto;
   display: table;
 }
@@ -235,6 +238,6 @@ img {
     height: 2em;
   }
   #modal .img-container {
-    margin-top: 15%;
+    margin-top: 10%;
   }
 }
