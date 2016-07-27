@@ -1,10 +1,10 @@
 var state = {
     current_resolution: '',
     images: [
-      {id:1, src: 'new-zealand-679068'},
-      {id:2, src: 'new-zealand-583176_1920'},
-      {id:3, src: 'new-zealand-583181_1920'},
-      {id:4, src: 'sun-rise-661541_1920'}
+      {id:1, src: 'new-zealand-679068', name: 'Hermoso Paisaje'},
+      {id:2, src: 'new-zealand-583176_1920', name: 'Perfecto Paisaje'},
+      {id:3, src: 'new-zealand-583181_1920', name: 'Paisaje sin igual'},
+      {id:4, src: 'sun-rise-661541_1920', name: 'Bello Paisaje'}
     ]
 }
 
@@ -30,15 +30,17 @@ updateImagesSources = function() {
   // Envía el tamaño correspondiente al contexto y tamaño de dispositivo
   var i = 0;
   for (i in state.images) {
-    $('#' + state.images[i].id).attr('src', 'img/' + state.images[i].src + '-' + state.current_resolution + '.jpg' )
-    console.log('#' + state.images[i].id + ' src updated to ' + state.images[i].src + '-' + state.current_resolution + '.jpg')
+    $('#' + state.images[i].id).attr('src', 'img/' + state.images[i].src + '-' + state.current_resolution + '.jpg');
+    $('#' + state.images[i].id).attr('alt', state.images[i].name);
+    console.log('#' + state.images[i].id + ' src updated to ' + state.images[i].src + '-' + state.current_resolution + '.jpg');
   }
 }
 
 showImage = function(imageId) {
   // Recibe un imageId y despliega modal con imagen a tamaño completo
-  console.log('showImage ' + imageId);
-  $('#selected').attr('src', 'img/' + state.images[imageId - 1].src + '-' + state.current_resolution + '.jpg' )
+  console.log('showImage ' + imageId + ' with name ' + state.images[imageId - 1].name);
+  $('#selected').attr('src', 'img/' + state.images[imageId - 1].src + '-' + state.current_resolution + '.jpg' );
+  $('#imgName').text(state.images[imageId - 1].name);
   $('#modal').toggle();
 }
 
